@@ -11,12 +11,11 @@ class App extends React.Component {
     }
 
     handleSubmit = async (searchTerm) => {
-        console.log(process.env.REACT_APP_YOUTUBE_API_KEY)
         const response = await youtube.get('search', { 
             params: {
                 part: 'snippet',
                 maxResults: 5,
-                key: process.env.YOUTUBE_API_KEY,
+                key: process.env.REACT_APP_YOUTUBE_API_KEY,
                 q: searchTerm,
             }
         })
